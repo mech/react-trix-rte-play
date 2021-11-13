@@ -70,7 +70,7 @@ function ReactTrixRTEInput(props) {
 
   function handleChange(event) {
     const newValue = event.target.value;
-    console.log("TESTING", newValue);
+    console.log("TESTING", trixRTEInputId);
     setValue(newValue);
     if (onChange) {
       onChange(event, newValue);
