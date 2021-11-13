@@ -57,7 +57,7 @@ function ReactTrixRTEInput(props) {
     }
 
     return () => {
-      console.log("2. unmount", savedRef);
+      console.log("2. unmount: savedRef: ", savedRef);
 
       if (savedRef && savedRef.current) {
         const { removeEventListener } = savedRef.current;
