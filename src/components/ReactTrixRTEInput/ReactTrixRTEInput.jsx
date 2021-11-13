@@ -55,6 +55,7 @@ function ReactTrixRTEInput(props) {
     return () => {
       if (trixRTEInputRef && trixRTEInputRef.current) {
         const { removeEventListener } = trixRTEInputRef.current;
+        console.log("is removeEventListener been called?", trixRTEInputRef.current)
         removeEventListener("trix-change", handleChange);
         if (onFocus) removeEventListener("trix-focus", onFocus);
         if (onBlur) removeEventListener("trix-blur", onBlur);
