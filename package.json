@@ -1,0 +1,80 @@
+{
+  "name": "react-trix-rte",
+  "version": "1.0.13",
+  "description": "React wrapper for Trix rich text editor created by Basecamp",
+  "main": "./index.js",
+  "scripts": {
+    "build": "webpack --config webpack.config.babel.js",
+    "build-examples": "webpack --config examples/webpack.config.babel.js --progress",
+    "clean": "rm -rf dist coverage",
+    "coverage": "jest --coverage",
+    "lint": "eslint ./src",
+    "prepublish": "npm run clean && npm run test && npm run build",
+    "start": "webpack-dev-server --config examples/webpack.config.live.babel.js",
+    "test": "npm run lint && npm run coverage",
+    "storybook": "start-storybook -p 6006",
+    "build-storybook": "build-storybook",
+    "deploy-storybook": "storybook-to-ghpages"
+  },
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/abhaynikam/react-trix-rte.git"
+  },
+  "keywords": [
+    "React",
+    "Trix"
+  ],
+  "author": "Abhay Nikam",
+  "license": "MIT",
+  "bugs": {
+    "url": "https://github.com/abhaynikam/react-trix-rte/issues"
+  },
+  "homepage": "https://abhaynikam.github.io/react-trix-rte/",
+  "dependencies": {
+    "trix": "^1.3.1"
+  },
+  "peerDependencies ": {
+    "react": "^17.0.1",
+    "react-dom": "^17.0.1"
+  },
+  "devDependencies": {
+    "@babel/core": "^7.1.2",
+    "@babel/preset-env": "^7.1.0",
+    "@babel/preset-react": "^7.0.0",
+    "@babel/register": "^7.0.0",
+    "@storybook/addon-actions": "^6.2.9",
+    "@storybook/addon-cssresources": "^6.2.9",
+    "@storybook/addon-links": "^6.2.9",
+    "@storybook/addons": "^6.2.9",
+    "@storybook/react": "^6.2.9",
+    "@storybook/storybook-deployer": "^2.8.5",
+    "babel-eslint": "^10.0.1",
+    "babel-jest": "^23.6.0",
+    "babel-loader": "^8.0.4",
+    "chai": "^4.1.2",
+    "clean-webpack-plugin": "^0.1.16",
+    "css-loader": "^1.0.1",
+    "enzyme": "^3.3.0",
+    "enzyme-adapter-react-16": "^1.1.1",
+    "eslint": "^5.8.0",
+    "eslint-plugin-react": "^7.4.0",
+    "gh-pages": "^2.2.0",
+    "jest-cli": "^23.6.0",
+    "node-sass": "^4.7.2",
+    "prop-types": "^15.6.0",
+    "react-hot-loader": "next",
+    "react-test-renderer": "^16.0.0",
+    "regenerator-runtime": "^0.12.1",
+    "sass-loader": "^7.0.1",
+    "style-loader": "^0.23.1",
+    "webpack": "^4.42.1",
+    "webpack-cli": "^3.3.11",
+    "webpack-dev-server": "^3.10.3"
+  },
+  "resolutions": {
+    "babel-core": "7.0.0-bridge.0",
+    "react": "^17.0.1",
+    "react-dom": "^17.0.1",
+    "minimist": "^1.2.2"
+  }
+}
