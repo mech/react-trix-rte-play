@@ -39,7 +39,7 @@ function ReactTrixRTEInput(props) {
   if (className) trixEditorOptions["class"] = className;
 
   useEffect(() => {
-    console.log("1. mount");
+    console.log("1. mount", trixRTEInputRef);
 
     if (trixRTEInputRef && trixRTEInputRef.current) {
       const { addEventListener } = trixRTEInputRef.current;
@@ -75,7 +75,7 @@ function ReactTrixRTEInput(props) {
 
   function handleChange(event) {
     const newValue = event.target.value;
-    console.log("TESTING", trixRTEInputId);
+    console.log("TESTING-1", trixRTEInputId);
     setValue(newValue);
     if (onChange) {
       onChange(event, newValue);
