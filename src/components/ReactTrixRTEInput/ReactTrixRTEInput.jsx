@@ -39,9 +39,9 @@ function ReactTrixRTEInput(props) {
   if (className) trixEditorOptions["class"] = className;
 
   useEffect(() => {
-    console.log("1. mount", trixRTEInputRef);
+    const savedRefCurrent = trixRTEInputRef.current;
 
-    const savedRef = trixRTEInputRef;
+    console.log("1. mount", savedRefCurrent);
 
     if (trixRTEInputRef && trixRTEInputRef.current) {
       const { addEventListener } = trixRTEInputRef.current;
@@ -57,11 +57,10 @@ function ReactTrixRTEInput(props) {
     }
 
     return () => {
-      console.log("2. unmount: savedRef: ", savedRef);
+      console.log("2. unmount: savedRef: ", savedRefCurrent);
 
-      if (savedRef && savedRef.current) {
-        const { removeEventListener } = savedRef.current;
-        console.log("is removeEventListener been called?", savedRef.current)
+      if (savedRefCurrent) {
+        const { removeEventListener } = savedRefCurrent;
         removeEventListener("trix-change", handleChange);
         if (onFocus) removeEventListener("trix-focus", onFocus);
         if (onBlur) removeEventListener("trix-blur", onBlur);
@@ -77,7 +76,7 @@ function ReactTrixRTEInput(props) {
 
   function handleChange(event) {
     const newValue = event.target.value;
-    console.log("TESTING-3", trixRTEInputRef);
+    console.log("TESTING-4", trixRTEInputRef);
 
     if (trixRTEInputRef.current) {
       setValue(newValue);
